@@ -12,6 +12,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'wot-fard': ['var(--font-wot-fard)'],
+      },
       colors: {
         decorative: 'hsl(var(--color-decorative) / <alpha-value>)',
         muted: 'hsl(var(--color-muted) / <alpha-value>)',
