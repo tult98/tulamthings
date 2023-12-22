@@ -1,22 +1,22 @@
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './global.css';
-import Header from '../src/widgets/Header';
+import Header from '../widgets/Header';
 
 const wotFardFont = localFont({
   src: [
     {
-      path: '../public/fonts/Wotfard-Regular.ttf',
+      path: '../../public/fonts/Wotfard-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/Wotfard-Medium.ttf',
+      path: '../../public/fonts/Wotfard-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/fonts/Wotfard-SemiBold.ttf',
+      path: '../../public/fonts/Wotfard-SemiBold.ttf',
       weight: '600',
       style: 'normal',
     },
