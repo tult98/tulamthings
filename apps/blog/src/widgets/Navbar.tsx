@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import Logo from '../components/Logo';
+import Link from 'next/link';
 
 interface INavigationItem {
   id: number;
@@ -52,7 +53,7 @@ const Navbar = () => {
   const renderNavigation = useCallback((navigation: INavigationItem) => {
     if (navigation.children) {
       return (
-        <li className='focus:outline-none'>
+        <li className="z-10">
           <details>
             <summary>{navigation.label}</summary>
             <ul className="relative gap-8 !px-6 !py-4 columns-2 bg-base-100 rounded-xl">
@@ -68,7 +69,7 @@ const Navbar = () => {
               </svg>
               {navigation.children.map((child) => (
                 <li key={child.id}>
-                  <a href="">{child.label}</a>
+                  <Link href={child.href!} className='hover:bg-transparent hover:text-primary'>{child.label}</Link>
                 </li>
               ))}
             </ul>
@@ -79,7 +80,7 @@ const Navbar = () => {
 
     return (
       <li>
-        <a href="">{navigation.label}</a>
+        <Link href={navigation.href!}>{navigation.label}</Link>
       </li>
     );
   }, []);
