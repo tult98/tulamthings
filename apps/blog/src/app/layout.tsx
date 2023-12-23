@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './global.css';
 import Header from '../widgets/Header';
+import './global.css';
 
 const wotFardFont = localFont({
   src: [

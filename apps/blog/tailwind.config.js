@@ -20,6 +20,35 @@ module.exports = {
         muted: 'hsl(var(--color-muted) / <alpha-value>)',
         'homepage-light': 'hsl(var(--color-homepage-light) / <alpha-value>)',
         'homepage-dark': 'hsl(var(--color-homepage-dark) / <alpha-value>)',
+        'gray-100': 'hsl(var(--color-gray-100) / <alpha-value>)',
+        'gray-200': 'hsl(var(--color-gray-200) / <alpha-value>)',
+        'gray-300': 'hsl(var(--color-gray-300) / <alpha-value>)',
+        'gray-400': 'hsl(var(--color-gray-400) / <alpha-value>)',
+        'gray-500': 'hsl(var(--color-gray-500) / <alpha-value>)',
+        'gray-600': 'hsl(var(--color-gray-600) / <alpha-value>)',
+        'gray-700': 'hsl(var(--color-gray-700) / <alpha-value>)',
+      },
+      animation: {
+        'logo-slide-left':
+          'logo-slide-left 300ms cubic-bezier(0.27, 0.22, 0.44, 1.03) 750ms 1 normal both running',
+        'logo-slide-right':
+          'logo-slide-right 300ms cubic-bezier(0.27, 0.22, 0.44, 1.03) 825ms 1 normal both running',
+        'drawing-first':
+          'drawing 600ms cubic-bezier(0.27, 0.22, 0.44, 1.03) 1200ms 1 normal both running',
+        'drawing-second': 'drawing 150ms ease 1050ms 1 normal both running',
+      },
+      keyframes: {
+        'logo-slide-left': {
+          '0%': { transform: 'translateX(9px)' },
+          '100%': { transform: 'translateX(-6px)' },
+        },
+        'logo-slide-right': {
+          '0%': { transform: 'translateX(-9px)' },
+          '100%': { transform: 'translateX(6px)' },
+        },
+        drawing: {
+          '100%': { strokeDashoffset: '0' },
+        },
       },
     },
   },

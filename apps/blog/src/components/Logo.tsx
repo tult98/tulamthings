@@ -4,7 +4,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <div className="flex flex-row text-2xl font-medium text-primary">
-        <span>Tu</span>
+        <span className="animate-logo-slide-left">Tu</span>
         <span className="inline-block relative w-[18px]">
           <svg
             width="14"
@@ -18,7 +18,7 @@ const Logo = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="stroke-gray-700 stroke-dasharray-26 stroke-dashoffset-26"
+              className="stroke-gray-700 drawing-first animate-drawing-first"
             ></path>
           </svg>
           <svg
@@ -33,11 +33,11 @@ const Logo = () => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="stroke-gray-700 stroke-dasharray-18 stroke-dashoffset-18"
+              className="stroke-gray-700 drawing-second animate-drawing-second"
             ></path>
           </svg>
         </span>
-        <span>lamthings</span>
+        <span className="animate-logo-slide-right">lamthings</span>
       </div>
     </Link>
   );

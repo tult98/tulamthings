@@ -8,5 +8,26 @@
     --color-muted: 210deg 55% 92%;
     --color-homepage-light: 204deg 67% 85%;
     --color-homepage-dark: 202deg 71% 90%;
+    --color-gray-100: 225deg 25% 95%;
+    --color-gray-200: 225deg 16% 90%;
+    --color-gray-300: 225deg 8% 80%;
+    --color-gray-400: 225deg 8% 70%;
+    --color-gray-500: 225deg 7% 60%;
+    --color-gray-600: 225deg 15% 50%;
+    --color-gray-700: 225deg 12% 40%;
+    --color-gray-900: 225deg 25% 20%;
+    --color-gray-1000: 225deg 15% 15%;
+  }
+}
+
+@layer utilities {
+  .drawing-first {
+    stroke-dashoffset: 26;
+    stroke-dasharray: 26;
+  }
+
+  .drawing-second {
+    stroke-dashoffset: 18;
+    stroke-dasharray: 18;
   }
 }
