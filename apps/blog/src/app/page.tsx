@@ -1,7 +1,9 @@
 export default async function Index() {
   return (
-    <div>
-      <p>This is home page</p>
-    </div>
+    <section>
+      <h2 className="font-medium uppercase text-secondary tracking-[.125em]">
+        Recently published
+      </h2>
+    </section>
   );
 }

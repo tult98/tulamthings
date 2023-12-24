@@ -69,7 +69,12 @@ const Navbar = () => {
               </svg>
               {navigation.children.map((child) => (
                 <li key={child.id}>
-                  <Link href={child.href!} className='hover:bg-transparent hover:text-primary'>{child.label}</Link>
+                  <Link
+                    href={child.href!}
+                    className="hover:bg-transparent hover:text-primary"
+                  >
+                    {child.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,7 +92,7 @@ const Navbar = () => {
 
   return (
     <section className="absolute top-0 left-0 flex justify-center navbar">
-      <div className="max-w-[1100px] w-full mt-10">
+      <div className="max-w-[1100px] w-full mt-10 px-8">
         <Logo />
         <ul className="px-5 space-x-2 text-base font-normal menu menu-horizontal">
           {navigationItems.map((navigation) => renderNavigation(navigation))}

@@ -18,6 +18,10 @@
     --color-gray-900: 225deg 25% 20%;
     --color-gray-1000: 225deg 15% 15%;
   }
+
+  h2 {
+    @apply font-bold break-words;
+  }
 }
 
 @layer utilities {

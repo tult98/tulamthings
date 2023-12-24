@@ -39,7 +39,9 @@ export default function RootLayout({
     <html lang="en" data-theme="light" className={`${wotFardFont.variable}`}>
       <body className="flex flex-col font-wot-fard">
         <Header />
-        <main className="max-w-[1100px] w-full self-center">{children}</main>
+        <main className="max-w-[1100px] w-full self-center py-16 px-8">
+          {children}
+        </main>
       </body>
     </html>
   );
