@@ -53,41 +53,35 @@ const Navbar = () => {
   const renderNavigation = useCallback((navigation: INavigationItem) => {
     if (navigation.children) {
       return (
-        <li className="z-10">
-          <details>
-            <summary>{navigation.label}</summary>
-            <ul className="relative gap-8 !px-6 !py-4 columns-2 bg-base-100 rounded-xl">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="12"
-                fill="#FFFFFF"
-                viewBox="0 0 32 12"
-                className="absolute -top-3 left-6"
-              >
-                <path d="M 0 12 C 8 12 9.6 0 16 0 C 22.4 0 24 12 32 12 Z"></path>
-              </svg>
-              {navigation.children.map((child) => (
-                <li key={child.id}>
-                  <Link
-                    href={child.href!}
-                    className="hover:bg-transparent hover:text-primary"
-                  >
-                    {child.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </details>
-        </li>
+        <details>
+          <summary>{navigation.label}</summary>
+          <ul className="relative gap-8 !px-6 !py-4 columns-2 bg-base-100 rounded-xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="12"
+              fill="#FFFFFF"
+              viewBox="0 0 32 12"
+              className="absolute -top-3 left-6"
+            >
+              <path d="M 0 12 C 8 12 9.6 0 16 0 C 22.4 0 24 12 32 12 Z"></path>
+            </svg>
+            {navigation.children.map((child) => (
+              <li key={child.id}>
+                <Link
+                  href={child.href!}
+                  className="hover:bg-transparent hover:text-primary"
+                >
+                  {child.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </details>
       );
     }
 
-    return (
-      <li>
-        <Link href={navigation.href!}>{navigation.label}</Link>
-      </li>
-    );
+    return <Link href={navigation.href!}>{navigation.label}</Link>;
   }, []);
 
   return (
@@ -95,7 +89,14 @@ const Navbar = () => {
       <div className="max-w-[1100px] w-full mt-10 px-8">
         <Logo />
         <ul className="px-5 space-x-2 text-base font-normal menu menu-horizontal">
-          {navigationItems.map((navigation) => renderNavigation(navigation))}
+          {navigationItems.map((navigation) => (
+            <li
+              className={`${navigation.children ? 'z-10' : ''}`}
+              key={navigation.id}
+            >
+              {renderNavigation(navigation)}
+            </li>
+          ))}
         </ul>
       </div>
     </section>
