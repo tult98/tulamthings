@@ -1,6 +1,6 @@
-interface IProps extends React.ComponentPropsWithoutRef<'button'> {}
+type Props = React.ComponentPropsWithoutRef<'button'> & object;
 
-export default function ReadMoreButton(props: IProps) {
+export default function ReadMoreButton(props: Props) {
   return (
     <div className="flex items-center space-x-2 group/read-more-button w-fit">
       <button {...props} className="font-bold">
