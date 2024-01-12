@@ -27,6 +27,8 @@ module.exports = {
         'gray-500': 'hsl(var(--color-gray-500) / <alpha-value>)',
         'gray-600': 'hsl(var(--color-gray-600) / <alpha-value>)',
         'gray-700': 'hsl(var(--color-gray-700) / <alpha-value>)',
+        'gray-900': 'hsl(var(--color-gray-900) / <alpha-value>)',
+        'gray-1000': 'hsl(var(--color-gray-1000) / <alpha-value>)',
       },
       animation: {
         'logo-slide-left':

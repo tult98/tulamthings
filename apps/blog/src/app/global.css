@@ -19,12 +19,24 @@
     --color-gray-1000: 225deg 15% 15%;
   }
 
+  * {
+    line-height: calc(1em + 0.725rem);
+  }
+
+  p {
+    line-height: 32px;
+  }
+
   h2 {
     @apply font-bold break-words;
   }
 }
 
 @layer utilities {
+  .heading-2 {
+    @apply text-base font-medium uppercase text-secondary tracking-[0.125em];
+  }
+
   .drawing-first {
     stroke-dashoffset: 26;
     stroke-dasharray: 26;
