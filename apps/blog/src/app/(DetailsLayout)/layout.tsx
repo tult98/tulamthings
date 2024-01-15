@@ -1,22 +1,21 @@
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
-import Header from '../widgets/Header';
-import './global.css';
+import '../global.css';
 
 const wotFardFont = localFont({
   src: [
     {
-      path: '../../public/fonts/Wotfard-Regular.ttf',
+      path: '../../../public/fonts/Wotfard-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/Wotfard-Medium.ttf',
+      path: '../../../public/fonts/Wotfard-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/Wotfard-SemiBold.ttf',
+      path: '../../../public/fonts/Wotfard-SemiBold.ttf',
       weight: '600',
       style: 'normal',
     },
@@ -40,12 +39,7 @@ export default function RootLayout({
       <body className="flex flex-col font-wot-fard">
         <div className="drawer drawer-end">
           <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="flex flex-col drawer-content">
-            <Header />
-            <main className="max-w-[1100px] w-full self-center py-16 lg:px-8 sm:px-6 px-4">
-              {children}
-            </main>
-          </div>
+          <div className="flex flex-col drawer-content">{children}</div>
           <div className="drawer-side">
             <label
               htmlFor="navbar-drawer"

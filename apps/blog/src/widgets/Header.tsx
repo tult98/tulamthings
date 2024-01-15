@@ -1,12 +1,23 @@
 import Navbar from '@blog/widgets/Navbar';
 
-const Header = () => {
+type Props = {
+  title?: string;
+  disableWave?: boolean; // means in post details page
+};
+
+const Header = ({ disableWave, title }: Props) => {
   return (
     <header
       id="header"
-      className="h-[200px] lg:h-[400px] bg-gradient-to-r from-homepage-dark to-homepage-light relative"
+      className={`${
+        disableWave ? 'h-[400px] flex flex-col justify-between' : 'h-[200px]'
+      } lg:h-[400px] bg-gradient-to-r from-homepage-dark to-homepage-light relative`}
     >
-      <div className="absolute left-0 right-0 bottom-0 w-full h-[90px] overflow-x-hidden">
+      <div
+        className={`absolute left-0 right-0 bottom-0 w-full h-[90px] overflow-x-hidden ${
+          disableWave ? 'hidden' : ''
+        }`}
+      >
         <svg
           preserveAspectRatio="none"
           width="1440"
@@ -19,6 +30,16 @@ const Header = () => {
         </svg>
       </div>
       <Navbar />
+      {/* TODO: fetch data from notion */}
+      {disableWave && title && (
+        <div className="flex justify-center">
+          <div className="pb-9 w-full max-w-[1100px] px-2 sm:px-4 lg:px-8">
+            <h1 className="text-gray-1000 font-medium text-[2.375rem]">
+              {title}
+            </h1>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

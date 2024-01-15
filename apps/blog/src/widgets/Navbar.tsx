@@ -85,7 +85,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <section className="absolute top-0 left-0 flex justify-center navbar">
+    <section className="flex justify-center navbar">
       <div className="max-w-[1100px] w-full lg:mt-10 mt-2 lg:px-8 sm:px-4 px-2 flex lg:justify-start justify-between">
         <Logo />
         <div className="flex-none lg:hidden">
