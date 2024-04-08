@@ -1,11 +1,17 @@
-import { CodeBlockObjectResponse } from '@blog/types/api-endpoints'
-import { Highlight, themes } from 'prism-react-renderer'
+'use client';
+
+import { CodeBlockObjectResponse } from '@blog/types/api-endpoints';
+import { Highlight, themes } from 'prism-react-renderer';
 
 const CodeSnippet = ({ block }: { block: CodeBlockObjectResponse }) => {
   return (
-    <Highlight theme={themes.github} code={block.code.rich_text[0].plain_text} language={block.code.language}>
+    <Highlight
+      theme={themes.github}
+      code={block.code.rich_text[0].plain_text}
+      language={block.code.language}
+    >
       {(highlight) => {
-        const { tokens, getLineProps, getTokenProps } = highlight
+        const { tokens, getLineProps, getTokenProps } = highlight;
         return (
           <pre>
             <div className="relative w-full mt-12 mb-20">
@@ -29,10 +35,10 @@ const CodeSnippet = ({ block }: { block: CodeBlockObjectResponse }) => {
               </div>
             </div>
           </pre>
-        )
+        );
       }}
     </Highlight>
-  )
-}
+  );
+};
 
-export default CodeSnippet
+export default CodeSnippet;

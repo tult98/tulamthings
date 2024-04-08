@@ -29,6 +29,17 @@ module.exports = {
         'gray-700': 'hsl(var(--color-gray-700) / <alpha-value>)',
         'gray-900': 'hsl(var(--color-gray-900) / <alpha-value>)',
         'gray-1000': 'hsl(var(--color-gray-1000) / <alpha-value>)',
+        'syntax-bg': 'hsl(var(--color-syntax-bg) / <alpha-value>)',
+        'syntax-highlight': 'hsl(var(--color-syntax-highlight) / <alpha-value>)',
+        'syntax-comment': 'hsl(var(--color-syntax-comment) / <alpha-value>)',
+        'syntax-prop': 'hsl(var(--color-syntax-prop) / <alpha-value>)',
+        'syntax-bool': 'hsl(var(--color-syntax-bool) / <alpha-value>)',
+        'syntax-val': 'hsl(var(--color-syntax-val) / <alpha-value>)',
+        'syntax-str': 'hsl(var(--color-syntax-str) / <alpha-value>)',
+        'syntax-name': 'hsl(var(--color-syntax-name) / <alpha-value>)',
+        'syntax-del': 'hsl(var(--color-syntax-del) / <alpha-value>)',
+        'syntax-regex': 'hsl(var(--color-syntax-regex) / <alpha-value>)',
+        'syntax-func': 'hsl(var(--color-syntax-func) / <alpha-value>)',
       },
       animation: {
         'logo-slide-left':

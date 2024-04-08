@@ -1,5 +1,5 @@
 import { CalloutBlockObjectResponse } from '@blog/types/api-endpoints';
-import TextBlock from '@blog/widgets/Block/TextBlock';
+import TextBlock from '@blog/components/Block/TextBlock';
 import Image from 'next/image';
 import { useMemo } from 'react';
 

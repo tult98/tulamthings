@@ -30,10 +30,9 @@ const Header = ({ disableWave, title }: Props) => {
         </svg>
       </div>
       <Navbar />
-      {/* TODO: fetch data from notion */}
       {disableWave && title && (
         <div className="flex justify-center">
-          <div className="pb-9 w-full max-w-[1100px] px-2 sm:px-4 lg:px-8">
+          <div className="pb-9 w-full max-w-[1100px] px-4 sm:px-6 lg:px-8">
             <h1 className="text-gray-1000 font-medium text-[2.375rem]">
               {title}
             </h1>

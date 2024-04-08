@@ -3,7 +3,7 @@ import {
   Heading3BlockObjectResponse,
 } from '@blog/types/api-endpoints';
 
-type HeadingBlockObjectResponse =
+export type HeadingBlockObjectResponse =
   | Heading2BlockObjectResponse
   | Heading3BlockObjectResponse;
 
@@ -37,7 +37,7 @@ const Heading2Block = ({
   return (
     <h2
       id={id}
-      className="mt-24 mb-8 text-[2rem] font-bold break-words text-tertiary"
+      className="mb-8 text-[2rem] font-bold break-words text-accent"
     >
       {block.heading_2.rich_text[0].plain_text}
     </h2>
@@ -54,7 +54,7 @@ const Heading3Block = ({
   return (
     <h3
       id={id}
-      className="mt-16 mb-3 text-[1.5625rem] font-bold break-words text-color-gray-900"
+      className="mt-16 mb-3 text-[1.5625rem] font-bold break-words text-gray-900"
     >
       {block.heading_3.rich_text[0].plain_text}
     </h3>

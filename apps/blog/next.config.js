@@ -15,6 +15,15 @@ const nextConfig = {
   experimental: {
     taint: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'tulamthings.s3.ap-southeast-2.amazonaws.com',
+        port: '',
+      },
+    ],
+  },
 };
 
 const plugins = [

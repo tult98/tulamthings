@@ -1,5 +1,5 @@
 import { ParagraphBlockObjectResponse } from '@blog/types/api-endpoints';
-import TextBlock from '@blog/widgets/Block/TextBlock';
+import TextBlock from '@blog/components/Block/TextBlock';
 
 const ParagraphBlock = ({ block }: { block: ParagraphBlockObjectResponse }) => {
   return (

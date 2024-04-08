@@ -17,6 +17,18 @@
     --color-gray-700: 225deg 12% 40%;
     --color-gray-900: 225deg 25% 20%;
     --color-gray-1000: 225deg 15% 15%;
+    --color-syntax-bg: 225deg 25% 97%;
+    --color-syntax-highlight: 225deg 25% 93%;
+    --color-syntax-txt: 210deg 0% 16%;
+    --color-syntax-comment: 203deg 35% 40%;
+    --color-syntax-prop: 320deg 100% 43%;
+    --color-syntax-bool: 296deg 100% 36%;
+    --color-syntax-val: 197deg 15% 49%;
+    --color-syntax-str: 248deg 100% 60%;
+    --color-syntax-name: 276deg 100% 50%;
+    --color-syntax-del: 0deg 100% 67%;
+    --color-syntax-regex: 252deg 100% 43%;
+    --color-syntax-fn: 216deg 100% 53%;
   }
 
   * {
@@ -29,6 +41,12 @@
 
   h2 {
     @apply font-bold break-words;
+  }
+}
+
+@layer components {
+  #article > * + h2 {
+    @apply mt-24;
   }
 }
 
