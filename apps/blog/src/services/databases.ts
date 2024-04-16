@@ -4,14 +4,14 @@ import {
   ListBlockChildrenResponse,
   PageObjectResponse,
   PartialBlockObjectResponse,
-  QueryDatabaseResponse
+  QueryDatabaseResponse,
 } from '@blog/types/api-endpoints';
 
 export class DatabaseService {
   static headers: HeadersInit = DEFAULT_NOTION_HEADERS;
 
   static async getTopLatestPosts(
-    numberOfPosts: number
+    numberOfPosts: number,
   ): Promise<QueryDatabaseResponse> {
     const body = {
       page_size: numberOfPosts,
@@ -34,11 +34,11 @@ export class DatabaseService {
       sorts: [
         {
           property: 'published_at',
-          direction: 'ascending',
+          direction: 'descending',
         },
         {
           property: 'created_at',
-          direction: 'ascending',
+          direction: 'descending',
         },
       ],
     };
@@ -49,21 +49,21 @@ export class DatabaseService {
     };
     const res = await fetch(
       `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`,
-      options
+      options,
     );
 
     return res.json();
   }
 
   static async getAllBlocksRecursive(
-    id: string
+    id: string,
   ): Promise<Array<PartialBlockObjectResponse | BlockObjectResponse>> {
     const queryBlocksRes = await fetch(
       `https://api.notion.com/v1/blocks/${id}/children?page_size=100`,
       {
         method: 'GET',
         headers: this.headers,
-      }
+      },
     );
     const blocksData: ListBlockChildrenResponse = await queryBlocksRes.json();
     if (blocksData.has_more) {
@@ -88,7 +88,7 @@ export class DatabaseService {
             },
           },
         }),
-      }
+      },
     );
     const pageObject = (
       (await queryDatabaseRes.json()) as QueryDatabaseResponse
