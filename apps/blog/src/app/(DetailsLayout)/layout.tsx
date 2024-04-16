@@ -36,17 +36,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="light" className={`${wotFardFont.variable}`}>
-      <body className="flex flex-col font-wot-fard">
+      <body className="font-wot-fard flex flex-col">
         <div className="drawer drawer-end">
           <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="flex flex-col drawer-content">{children}</div>
+          <div className="drawer-content flex flex-col">{children}</div>
           <div className="drawer-side">
             <label
               htmlFor="navbar-drawer"
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="z-20 min-h-full p-4 menu w-80 bg-base-200">
+            <ul className="menu bg-base-200 z-20 min-h-full w-80 p-4">
               <li>
                 <a>Latest</a>
               </li>

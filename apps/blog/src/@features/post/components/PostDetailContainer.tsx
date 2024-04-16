@@ -1,5 +1,4 @@
 import CalloutBlock from '@blog/@features/post/components/blocks/CalloutBlock';
-import CodePlayground from '@blog/@features/post/components/blocks/CodePlayground';
 import CodeSnippet from '@blog/@features/post/components/blocks/CodeSnippet';
 import HeadingBlock from '@blog/@features/post/components/blocks/HeadingBlock';
 import ImageBlock from '@blog/@features/post/components/blocks/ImageBlock';
@@ -41,11 +40,7 @@ const renderBlockByType = (block: BlockObjectRequest | IListItemBlock) => {
     case 'image':
       return <ImageBlock block={block as ImageBlockObjectResponse} />;
     case 'code':
-      return block.code.language !== 'json' ? (
-        <CodeSnippet block={block as CodeBlockObjectResponse} />
-      ) : (
-        <CodePlayground block={block} />
-      );
+      return <CodeSnippet block={block as CodeBlockObjectResponse} />;
     default:
       return null;
   }
