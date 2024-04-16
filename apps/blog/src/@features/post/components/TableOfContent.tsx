@@ -1,3 +1,4 @@
+import ShareButtons from '@blog/@features/post/components/ShareButtons';
 import { BlockObjectResponse } from '@blog/types/api-endpoints';
 import React from 'react';
 
@@ -28,7 +29,13 @@ const renderHeading = (heading: BlockObjectResponse) => {
   return null;
 };
 
-const TableOfContent = ({ headings }: { headings: BlockObjectResponse[] }) => (
+const TableOfContent = ({
+  headings,
+  shareUrl,
+}: {
+  headings: BlockObjectResponse[];
+  shareUrl: string;
+}) => (
   <div>
     <p className="mb-4 text-base font-medium uppercase text-gray-900">
       Table of contents
@@ -38,6 +45,7 @@ const TableOfContent = ({ headings }: { headings: BlockObjectResponse[] }) => (
         {renderHeading(heading as BlockObjectResponse)}
       </React.Fragment>
     ))}
+    <ShareButtons shareUrl={shareUrl} />
   </div>
 );
 

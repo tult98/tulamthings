@@ -8,6 +8,7 @@ import ListItemBlock, {
 } from '@blog/@features/post/components/blocks/ListItemBlock';
 import ParagraphBlock from '@blog/@features/post/components/blocks/ParagraphBlock';
 import QuoteBlock from '@blog/@features/post/components/blocks/QuoteBlock';
+import ShareButtons from '@blog/@features/post/components/ShareButtons';
 import TableOfContent from '@blog/@features/post/components/TableOfContent';
 import { getTableOfContents } from '@blog/@features/post/utils/content';
 import { DatabaseService } from '@blog/services/databases';
@@ -54,6 +55,8 @@ export default async function PostDetailContainer({ slug }: { slug: string }) {
   const post = await DatabaseService.getPostBySlug(slug);
   const headings = getTableOfContents(post ? post.blocks : []);
 
+  const shareUrl = `${process.env.NEXT_PUBLIC_APP_URL}/posts/${slug}`;
+
   return (
     <>
       <article
@@ -65,9 +68,12 @@ export default async function PostDetailContainer({ slug }: { slug: string }) {
             {renderBlockByType(block as any)}
           </React.Fragment>
         ))}
+        <div className="lg:hidden">
+          <ShareButtons shareUrl={shareUrl} />
+        </div>
       </article>
       <aside className="sticky top-[148px] hidden shrink grow-0 basis-[250px] lg:block ">
-        <TableOfContent headings={headings} />
+        <TableOfContent shareUrl={shareUrl} headings={headings} />
       </aside>
     </>
   );
