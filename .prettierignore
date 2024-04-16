@@ -3,4 +3,3 @@
 /coverage
 /.nx/cache
 /node_modules
-/apps/blog/.env
