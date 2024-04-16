@@ -1,9 +1,9 @@
+import TextBlock from '@blog/@features/post/components/blocks/TextBlock';
 import {
   BlockObjectResponse,
   BulletedListItemBlockObjectResponse,
   NumberedListItemBlockObjectResponse,
 } from '@blog/types/api-endpoints';
-import TextBlock from '@blog/components/Block/TextBlock';
 
 export interface IListItemBlock {
   type: 'list_item';
@@ -14,7 +14,7 @@ const ListItemBlock = ({ blocks }: { blocks: BlockObjectResponse[] }) => {
   return (
     <ul
       style={{ padding: 'revert' }}
-      className={`text-[1.1875rem] list-outside mb-6 ${
+      className={`mb-6 list-outside text-[1.1875rem] ${
         blocks[0].type === 'bulleted_list_item' ? '!list-disc' : '!list-decimal'
       }`}
     >
@@ -29,7 +29,7 @@ const ListItemBlock = ({ blocks }: { blocks: BlockObjectResponse[] }) => {
             key={block.id}
             block={block as BulletedListItemBlockObjectResponse}
           />
-        )
+        ),
       )}
     </ul>
   );

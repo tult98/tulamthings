@@ -14,11 +14,11 @@ const CodeSnippet = ({ block }: { block: CodeBlockObjectResponse }) => {
         const { tokens, getLineProps, getTokenProps } = highlight;
         return (
           <pre>
-            <div className="relative w-full mt-12 mb-20">
-              <div className="absolute z-[2] top-0 lg:right-[14px] right-6 pt-[2px] px-3 text-[18px] font-medium uppercase text-gray-700 -translate-y-full bg-syntax-bg rounded-t-lg font-sans">
+            <div className="relative mt-12 mb-20 w-full">
+              <div className="bg-syntax-bg absolute top-0 right-6 z-[2] -translate-y-full rounded-t-lg px-3 pt-[2px] font-sans text-[18px] font-medium uppercase text-gray-700 lg:right-[14px]">
                 {block.code.language}
               </div>
-              <div className="relative p-8 -mx-4 overflow-x-auto whitespace-pre-wrap rounded-md lg:-mx-8 bg-syntax-bg">
+              <div className="bg-syntax-bg relative -mx-4 overflow-x-auto whitespace-pre-wrap rounded-md p-8 lg:-mx-8">
                 {tokens.map((line, i) => (
                   <div
                     key={i}

@@ -25,7 +25,7 @@ const TextBlock = ({ item }: { item: RichTextItemResponse }) => {
   if (item.href)
     return (
       <Link
-        className="underline text-primary hover:font-medium opacity-80"
+        className="text-primary underline opacity-80 hover:font-medium"
         href={item.href}
       >
         {item.plain_text}

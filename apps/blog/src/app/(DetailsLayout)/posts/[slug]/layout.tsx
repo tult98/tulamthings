@@ -1,5 +1,5 @@
 import { DatabaseService } from '@blog/services/databases';
-import Header from '@blog/widgets/Header';
+import Header from '@blog/components/Header';
 import React from 'react';
 
 export default async function PostDetailsLayout({
@@ -14,7 +14,7 @@ export default async function PostDetailsLayout({
   return (
     <>
       <Header disableWave={true} title={post?.title ?? ''} />
-      <main className="max-w-[1100px] w-full self-center py-16 lg:px-8 sm:px-6 px-4 flex justify-between">
+      <main className="flex w-full max-w-[1100px] justify-between self-center py-16 px-4 sm:px-6 lg:px-8">
         {children}
       </main>
     </>

@@ -1,11 +1,10 @@
 import { DEFAULT_NOTION_HEADERS } from '@blog/constants';
 import {
-  BlockObjectRequest,
   BlockObjectResponse,
   ListBlockChildrenResponse,
   PageObjectResponse,
   PartialBlockObjectResponse,
-  QueryDatabaseResponse,
+  QueryDatabaseResponse
 } from '@blog/types/api-endpoints';
 
 export class DatabaseService {

@@ -1,4 +1,4 @@
-import Header from '@blog/widgets/Header';
+import Header from '@blog/components/Header';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '../global.css';
@@ -37,12 +37,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="light" className={`${wotFardFont.variable}`}>
-      <body className="flex flex-col font-wot-fard">
+      <body className="font-wot-fard flex flex-col">
         <div className="drawer drawer-end">
           <input id="navbar-drawer" type="checkbox" className="drawer-toggle" />
-          <div className="flex flex-col drawer-content">
+          <div className="drawer-content flex flex-col">
             <Header />
-            <main className="max-w-[1100px] w-full self-center py-16 lg:px-8 sm:px-6 px-4">
+            <main className="w-full max-w-[1100px] self-center py-16 px-4 sm:px-6 lg:px-8">
               {children}
             </main>
           </div>
@@ -52,7 +52,7 @@ export default function RootLayout({
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="z-20 min-h-full p-4 menu w-80 bg-base-200">
+            <ul className="menu bg-base-200 z-20 min-h-full w-80 p-4">
               <li>
                 <a>Latest</a>
               </li>

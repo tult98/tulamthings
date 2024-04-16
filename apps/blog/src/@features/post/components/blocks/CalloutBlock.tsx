@@ -1,5 +1,5 @@
+import TextBlock from '@blog/@features/post/components/blocks/TextBlock';
 import { CalloutBlockObjectResponse } from '@blog/types/api-endpoints';
-import TextBlock from '@blog/components/Block/TextBlock';
 import Image from 'next/image';
 import { useMemo } from 'react';
 
@@ -28,8 +28,8 @@ const CalloutBlock = ({ block }: { block: CalloutBlockObjectResponse }) => {
   }, [block]);
 
   return (
-    <aside className="relative px-8 py-6 mt-12 mb-16 lg:-mx-8 bg-muted rounded-[4px] border-l-[3px] border-info">
-      <div className="absolute top-0 left-0 flex items-center justify-center w-12 h-12 p-2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full">
+    <aside className="bg-muted border-info relative mt-12 mb-16 rounded-[4px] border-l-[3px] px-8 py-6 lg:-mx-8">
+      <div className="absolute top-0 left-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white p-2">
         {calloutIcon}
       </div>
       {block.callout.rich_text.map((text, index) => (

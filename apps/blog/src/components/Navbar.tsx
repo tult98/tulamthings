@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useCallback } from 'react';
-import Logo from '../components/Logo';
+import Logo from './Logo';
 
 interface INavigationItem {
   id: number;
@@ -55,7 +55,7 @@ const Navbar = () => {
       return (
         <details>
           <summary>{navigation.label}</summary>
-          <ul className="relative gap-8 !px-6 !py-4 columns-2 bg-base-100 rounded-xl">
+          <ul className="bg-base-100 relative columns-2 gap-8 rounded-xl !px-6 !py-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -70,7 +70,7 @@ const Navbar = () => {
               <li key={child.id}>
                 <Link
                   href={child.href!}
-                  className="hover:bg-transparent hover:text-primary"
+                  className="hover:text-primary hover:bg-transparent"
                 >
                   {child.label}
                 </Link>
@@ -85,8 +85,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <section className="flex justify-center navbar">
-      <div className="max-w-[1100px] w-full lg:mt-10 mt-2 lg:px-8 sm:px-4 px-2 flex lg:justify-start justify-between">
+    <section className="navbar flex justify-center">
+      <div className="mt-2 flex w-full max-w-[1100px] justify-between px-2 sm:px-4 lg:mt-10 lg:justify-start lg:px-8">
         <Logo />
         <div className="flex-none lg:hidden">
           <label
@@ -98,7 +98,7 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block w-6 h-6 stroke-current"
+              className="inline-block h-6 w-6 stroke-current"
             >
               <path
                 strokeLinecap="round"
@@ -109,7 +109,7 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        <ul className="hidden px-5 space-x-2 text-base font-normal menu menu-horizontal lg:flex">
+        <ul className="menu menu-horizontal hidden space-x-2 px-5 text-base font-normal lg:flex">
           {navigationItems.map((navigation) => (
             <li
               className={`${navigation.children ? 'z-10' : ''}`}

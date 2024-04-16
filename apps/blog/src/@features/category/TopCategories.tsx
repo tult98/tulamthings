@@ -1,4 +1,4 @@
-import CategoryItem from '@blog/components/CategoryItem';
+import { CategoryItem } from '@blog/@features/category/CategoryItem';
 
 const categories = [
   'React',
@@ -13,7 +13,7 @@ const categories = [
 export default function TopCategories() {
   return (
     <section>
-      <p className="mb-8 heading-2">Top categories</p>
+      <p className="heading-2 mb-8">Top categories</p>
       {categories.map((category, index) => (
         <CategoryItem key={index} label={category} />
       ))}

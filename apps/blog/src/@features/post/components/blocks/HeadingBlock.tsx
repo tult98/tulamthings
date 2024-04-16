@@ -35,10 +35,7 @@ const Heading2Block = ({
   id: string;
 }) => {
   return (
-    <h2
-      id={id}
-      className="mb-8 text-[2rem] font-bold break-words text-accent"
-    >
+    <h2 id={id} className="text-accent mb-8 break-words text-[2rem] font-bold">
       {block.heading_2.rich_text[0].plain_text}
     </h2>
   );
@@ -54,7 +51,7 @@ const Heading3Block = ({
   return (
     <h3
       id={id}
-      className="mt-16 mb-3 text-[1.5625rem] font-bold break-words text-gray-900"
+      className="mt-16 mb-3 break-words text-[1.5625rem] font-bold text-gray-900"
     >
       {block.heading_3.rich_text[0].plain_text}
     </h3>

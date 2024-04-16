@@ -1,11 +1,11 @@
-import PopularContent from '@blog/widgets/PopularContent';
-import PostContainer from '@blog/widgets/PostContainer';
-import TopCategories from '@blog/widgets/TopCategories';
+import PopularContent from '@blog/@features/post/components/PopularContent';
+import TopCategories from '@blog/@features/category/TopCategories';
+import { PostListContainer } from '@blog/@features/post';
 
 export default function Index() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-24">
-      <PostContainer />
+    <div className="grid grid-cols-1 gap-x-24 lg:grid-cols-3">
+      <PostListContainer />
       <aside>
         <TopCategories />
         <PopularContent />

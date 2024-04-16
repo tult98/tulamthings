@@ -1,8 +1,8 @@
-import PostCard from '@blog/components/PostCard';
+import { PostCard } from '@blog/@features/post/components/PostCard';
 import { DatabaseService } from '@blog/services/databases';
 import { PageObjectResponse } from '@blog/types/api-endpoints';
 
-const PostContainer = async () => {
+export default async function PostListContainer() {
   const topLatestPosts = await DatabaseService.getTopLatestPosts(10);
 
   return (
@@ -13,6 +13,4 @@ const PostContainer = async () => {
       ))}
     </section>
   );
-};
-
-export default PostContainer;
+}

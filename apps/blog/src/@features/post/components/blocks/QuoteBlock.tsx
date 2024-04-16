@@ -1,10 +1,10 @@
+import TextBlock from '@blog/@features/post/components/blocks/TextBlock';
 import { QuoteBlockObjectResponse } from '@blog/types/api-endpoints';
-import TextBlock from '@blog/components/Block/TextBlock';
 
 const QuoteBlock = ({ block }: { block: QuoteBlockObjectResponse }) => {
   return (
     <blockquote>
-      <p className="text-[1.1875rem] mt-6 break-words text-gray-700 w-fit my-12">
+      <p className="my-12 mt-6 w-fit break-words text-[1.1875rem] text-gray-700">
         {block.quote.rich_text.map((text, index) => (
           <TextBlock key={index} item={text} />
         ))}

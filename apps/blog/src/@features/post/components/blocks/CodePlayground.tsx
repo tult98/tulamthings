@@ -5,7 +5,7 @@ import { nightOwl } from '@codesandbox/sandpack-themes';
 
 const CodePlayground = ({ block }: { block: any }) => {
   return (
-    <div className="max-w-[750px] lg:-mx-8 -mx-4 py-6">
+    <div className="-mx-4 max-w-[750px] py-6 lg:-mx-8">
       <Sandpack
         theme={nightOwl}
         template={block.code.template}
