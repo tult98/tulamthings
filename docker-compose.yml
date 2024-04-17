@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:14
+    env_file:
+      - .env
+    container_name: blog_dev_db
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER'
+        ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    ports:
+      - ${POSTGRES_PORT:-5433}:5432
