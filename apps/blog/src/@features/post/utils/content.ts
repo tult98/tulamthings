@@ -20,6 +20,8 @@ export const getCodeLanguage = (language: string) => {
       return 'jsx';
     case 'typescript':
       return 'tsx';
+    case 'shell':
+      return 'bash';
     default:
       return language;
   }

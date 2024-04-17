@@ -3,6 +3,14 @@
 import { getCodeLanguage } from '@blog/@features/post/utils/content';
 import { CodeBlockObjectResponse } from '@blog/types/api-endpoints';
 import { Highlight, themes } from 'prism-react-renderer';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-tsx';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-yaml';
 
 const CodeSnippet = ({ block }: { block: CodeBlockObjectResponse }) => {
   return (
@@ -10,6 +18,7 @@ const CodeSnippet = ({ block }: { block: CodeBlockObjectResponse }) => {
       theme={themes.github}
       code={block.code.rich_text[0].plain_text}
       language={getCodeLanguage(block.code.language)}
+      prism={Prism}
     >
       {(highlight) => {
         const { tokens, getLineProps, getTokenProps } = highlight;
