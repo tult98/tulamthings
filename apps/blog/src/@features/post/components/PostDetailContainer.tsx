@@ -56,7 +56,7 @@ export default async function PostDetailContainer({ slug }: { slug: string }) {
     <>
       <article
         id="article"
-        className="mb-12 w-screen shrink basis-[686px] lg:w-auto"
+        className="mb-12 w-full max-w-[686px] shrink basis-[686px] lg:w-auto"
       >
         {post?.blocks?.map((block, index) => (
           <React.Fragment key={index}>

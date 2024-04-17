@@ -16,10 +16,10 @@ const CodeSnippet = ({ block }: { block: CodeBlockObjectResponse }) => {
         return (
           <pre>
             <div className="relative mt-12 mb-20 w-full">
-              <div className="bg-syntax-bg absolute top-0 right-6 z-[2] -translate-y-full rounded-t-lg px-3 pt-[2px] font-sans text-[18px] font-medium uppercase text-gray-700 lg:right-[14px]">
+              <div className="bg-syntax-bg absolute top-1 right-0 z-[2] -translate-y-full rounded-t-lg px-3 pt-[2px] font-sans text-[18px] font-medium uppercase text-gray-700">
                 {getCodeLanguage(block.code.language)}
               </div>
-              <div className="bg-syntax-bg relative -mx-4 overflow-x-auto whitespace-pre-wrap rounded-md p-8 lg:-mx-8">
+              <div className="bg-syntax-bg overflow-x-auto rounded-md p-8">
                 {tokens.map((line, i) => (
                   <div
                     key={i}

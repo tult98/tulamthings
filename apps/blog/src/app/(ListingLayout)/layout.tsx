@@ -1,4 +1,5 @@
 import Header from '@blog/components/Header';
+import SideBar from '@blog/components/SideBar';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '../global.css';
@@ -46,24 +47,7 @@ export default function RootLayout({
               {children}
             </main>
           </div>
-          <div className="drawer-side">
-            <label
-              htmlFor="navbar-drawer"
-              aria-label="close sidebar"
-              className="drawer-overlay"
-            ></label>
-            <ul className="menu bg-base-200 z-20 min-h-full w-80 p-4">
-              <li>
-                <a>Latest</a>
-              </li>
-              <li>
-                <a>Posts</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-            </ul>
-          </div>
+          <SideBar />
         </div>
       </body>
     </html>
